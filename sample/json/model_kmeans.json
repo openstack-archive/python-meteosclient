@@ -1,0 +1,11 @@
+{
+    "display_name": "sample-kmeans-model",
+    "display_description": "Sample KMeans Model",
+    "source_dataset_url": "swift://meteos/kmeans_data.txt",
+    "model_type": "KMeans",
+    "model_params": "{'numIterations': 5, 'numClasses':5}",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}

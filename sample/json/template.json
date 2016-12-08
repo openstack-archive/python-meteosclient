@@ -1,0 +1,11 @@
+{
+    "display_name": "example-template",
+    "display_description": "This is a sample template of experiment",
+    "image_id" : "<YOUR_GLANCE_IMAGE_ID>",
+    "master_nodes_num": 1,
+    "master_flavor_id": "4",
+    "worker_nodes_num": 2,
+    "worker_flavor_id": "2",
+    "spark_version": "1.6.0",
+    "floating_ip_pool": "<YOUR_PUBLIC_NETWORK_ID>"
+}

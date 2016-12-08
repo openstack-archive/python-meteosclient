@@ -1,0 +1,11 @@
+{
+    "source_dataset_url": "swift://meteos/linear_data.txt",
+    "display_name": "sample-data",
+    "display_description": "This is a sample dataset",
+    "method": "parse",
+    "params": [{"method": "filter", "args": "lambda l: l.split(',')[0] != '0'"}],
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}

@@ -1,0 +1,8 @@
+{
+    "display_name": "sample-linear-model",
+    "display_description": "Sample LinearRegression Model",
+    "source_dataset_url": "internal://<YOUR_DATASET_ID>",
+    "model_type": "LinearRegression",
+    "model_params": "{'numIterations': 100}",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>"
+}

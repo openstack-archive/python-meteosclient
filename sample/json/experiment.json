@@ -1,0 +1,7 @@
+{
+    "display_name": "example-experiment",
+    "display_description": "This is a sample experiment",
+    "key_name": "<YOUR_KEYPAIR_NAME>",
+    "neutron_management_network": "<YOUR_PRIVATE_NETWORK_ID>",
+    "template_id": "<YOUR_TEMPLATE_ID>"
+}

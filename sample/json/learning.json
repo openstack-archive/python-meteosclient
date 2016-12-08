@@ -1,0 +1,8 @@
+{
+    "display_name": "example-learning-job",
+    "display_description": "This is a sample job",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "model_id": "<YOUR_MODEL_ID>",
+    "method": "predict",
+    "args": "<INPUT_DATA>"
+}

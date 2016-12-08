@@ -1,0 +1,12 @@
+{
+    "display_name": "sample-tree-model",
+    "display_description": "Sample Decision Tree Model",
+    "source_dataset_url": "swift://meteos/decision_tree_data.txt",
+    "model_type": "DecisionTreeRegression",
+    "model_params": "{'numIterations': 100}",
+    "dataset_format": "libsvm",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}

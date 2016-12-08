@@ -1,0 +1,11 @@
+{
+    "display_name": "sample-recommendation-model",
+    "display_description": "Sample Recommendation Model",
+    "source_dataset_url": "swift://meteos/recommendation_data.txt",
+    "model_type": "Recommendation",
+    "model_params": "{'numIterations': 5}",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}

@@ -1,0 +1,11 @@
+{
+    "display_name": "sample-logistic-model",
+    "display_description": "Sample LogisticRegression Model",
+    "source_dataset_url": "swift://meteos/logistic_data.txt",
+    "model_type": "LogisticRegression",
+    "model_params": "{'numIterations': 100}",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}
