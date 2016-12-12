@@ -28,13 +28,12 @@ class LearningManager(base.ResourceManager):
     NotUpdated = base.NotUpdated()
 
     def create(self, display_name=None, display_description=None,
-               experiment_id=None, model_id=None, method=None, args=None):
+               model_id=None, method=None, args=None):
         """Create a Learning."""
 
         data = {
             'display_name': display_name,
             'display_description': display_description,
-            'experiment_id': experiment_id,
             'model_id': model_id,
             'method': method,
             'args': base64.b64encode(str(args)),
