@@ -53,8 +53,8 @@ def _filter_call_args(args, func, remap={}):
             del args[name]
 
 
-def _show_dict(dict):
-    utils.print_dict(dict._info)
+def _show_dict(dict, wrap=0):
+    utils.print_dict(dict._info, wrap=wrap)
 
 
 #
@@ -75,7 +75,6 @@ def do_template_list(cs, args):
 
     columns = ('id',
                'name',
-               'description',
                'status',
                'master_nodes',
                'worker_nodes',
@@ -130,7 +129,6 @@ def do_experiment_list(cs, args):
 
     columns = ('id',
                'name',
-               'description',
                'status',
                'created_at')
     utils.print_list(experiments, columns)
@@ -183,10 +181,8 @@ def do_dataset_list(cs, args):
 
     columns = ('id',
                'name',
-               'description',
                'status',
-               'source_dataset_url',
-               'created_at')
+               'source_dataset_url')
     utils.print_list(datasets, columns)
 
 
@@ -196,7 +192,7 @@ def do_dataset_list(cs, args):
 def do_dataset_show(cs, args):
     """Show details of a dataset."""
     dataset = cs.datasets.get(args.id)
-    _show_dict(dataset)
+    _show_dict(dataset, wrap=50)
 
 
 @utils.arg('--json',
@@ -237,11 +233,9 @@ def do_model_list(cs, args):
 
     columns = ('id',
                'name',
-               'description',
                'status',
                'type',
-               'source_dataset_url',
-               'created_at')
+               'source_dataset_url')
     utils.print_list(models, columns)
 
 
@@ -292,11 +286,9 @@ def do_learning_list(cs, args):
 
     columns = ('id',
                'name',
-               'description',
                'status',
                'args',
-               'stdout',
-               'created_at')
+               'stdout')
     base64_params = ['args']
     utils.print_list(learnings, columns, base64_params=base64_params)
 
