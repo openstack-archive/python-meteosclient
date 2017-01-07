@@ -148,7 +148,7 @@ class ResourceManager(object):
 
         resp = self.api.post(url, **kwargs)
 
-        if resp.status_code != 202:
+        if resp.status_code != 202 and resp.status_code != 200:
             self._raise_api_exception(resp)
 
         if response_key is not None:

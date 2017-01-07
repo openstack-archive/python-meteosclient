@@ -225,6 +225,10 @@ def do_dataset_delete(cs, args):
 #
 # model-delete <model_id>
 #
+# model-load <model_id>
+#
+# model-unload <model_id>
+#
 
 
 def do_model_list(cs, args):
@@ -266,6 +270,22 @@ def do_model_create(cs, args):
 def do_model_delete(cs, args):
     """Delete a model."""
     cs.models.delete(args.id)
+
+
+@utils.arg('id',
+           metavar='<model_id>',
+           help='ID of the model to load.')
+def do_model_load(cs, args):
+    """Load a model for online prediction."""
+    cs.models.load(args.id)
+
+
+@utils.arg('id',
+           metavar='<model_id>',
+           help='ID of the model to unload.')
+def do_model_unload(cs, args):
+    """Unload a model."""
+    cs.models.unload(args.id)
 
 
 #

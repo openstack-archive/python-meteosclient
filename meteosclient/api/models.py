@@ -70,3 +70,17 @@ class ModelManager(base.ResourceManager):
     def delete(self, model_id):
         """Delete a Model Model."""
         self._delete('/models/%s' % model_id)
+
+    def load(self, model_id):
+        """Load a Model."""
+        url = '/models/%s/action' % model_id
+        body = {'os-load': None}
+
+        self._post(url, body)
+
+    def unload(self, model_id):
+        """Unload a Model."""
+        url = '/models/%s/action' % model_id
+        body = {'os-unload': None}
+
+        self._post(url, body)
