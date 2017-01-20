@@ -26,6 +26,7 @@ from meteosclient.api import templates
 from meteosclient.api import experiments
 from meteosclient.api import datasets
 from meteosclient.api import models
+from meteosclient.api import model_evaluations
 from meteosclient.api import learnings
 
 
@@ -119,6 +120,7 @@ class Client(object):
         self.experiments = experiments.ExperimentManager(client)
         self.datasets = datasets.DatasetManager(client)
         self.models = models.ModelManager(client)
+        self.model_evaluations = model_evaluations.ModelEvaluationManager(client)
         self.learnings = learnings.LearningManager(client)
 
     def _get_keystone_auth(self, username=None, api_key=None, auth_url=None,

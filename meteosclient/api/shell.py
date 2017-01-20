@@ -289,6 +289,61 @@ def do_model_unload(cs, args):
 
 
 #
+# Model_Evaluations
+# ~~~~~~~~
+# model_evaluation-list
+#
+# model_evaluation-show <model_evaluation_id>
+#
+# model_evaluation-create [--json <file>]
+#
+# model_evaluation-delete <model_evaluation_id>
+#
+
+def do_model_evaluation_list(cs, args):
+    """Print a list of available model_evaluations."""
+    model_evaluations = cs.model_evaluations.list()
+
+    columns = ('id',
+               'name',
+               'status',
+               'model_id',
+               'model_type',
+               'source_dataset_url',
+               'stdout')
+    utils.print_list(model_evaluations, columns)
+
+
+@utils.arg('id',
+           metavar='<model_evaluation_id>',
+           help='ID of the model_evaluation to show.')
+def do_model_evaluation_show(cs, args):
+    """Show details of a model_evaluation."""
+    model_evaluation = cs.model_evaluations.get(args.id)
+    _show_dict(model_evaluation)
+
+
+@utils.arg('--json',
+           default=sys.stdin,
+           type=argparse.FileType('r'),
+           help='JSON representation of model_evaluation.')
+def do_model_evaluation_create(cs, args):
+    """Create a model_evaluation."""
+    model_evaluation = json.loads(args.json.read())
+
+    _filter_call_args(model_evaluation, cs.model_evaluations.create)
+    _show_dict(cs.model_evaluations.create(**model_evaluation))
+
+
+@utils.arg('id',
+           metavar='<model_evaluation_id>',
+           help='ID of the model_evaluation to delete.')
+def do_model_evaluation_delete(cs, args):
+    """Delete a model_evaluation."""
+    cs.model_evaluations.delete(args.id)
+
+
+#
 # Learnings
 # ~~~~~~~~
 # learning-list
