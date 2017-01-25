@@ -14,13 +14,10 @@
 #    under the License.
 
 import argparse
-import datetime
 import inspect
 import json
-import os.path
 import sys
 
-from meteosclient.openstack.common.apiclient import exceptions
 from meteosclient.openstack.common import cliutils as utils
 
 

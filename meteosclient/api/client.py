@@ -22,12 +22,12 @@ from keystoneauth1.identity import v3
 from keystoneauth1 import session as keystone_session
 from keystoneauth1 import token_endpoint
 
-from meteosclient.api import templates
-from meteosclient.api import experiments
 from meteosclient.api import datasets
-from meteosclient.api import models
-from meteosclient.api import model_evaluations
+from meteosclient.api import experiments
 from meteosclient.api import learnings
+from meteosclient.api import model_evaluations as model_eva
+from meteosclient.api import models
+from meteosclient.api import templates
 
 
 USER_AGENT = 'python-meteosclient'
@@ -120,7 +120,7 @@ class Client(object):
         self.experiments = experiments.ExperimentManager(client)
         self.datasets = datasets.DatasetManager(client)
         self.models = models.ModelManager(client)
-        self.model_evaluations = model_evaluations.ModelEvaluationManager(client)
+        self.model_evaluations = model_eva.ModelEvaluationManager(client)
         self.learnings = learnings.LearningManager(client)
 
     def _get_keystone_auth(self, username=None, api_key=None, auth_url=None,

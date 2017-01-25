@@ -27,7 +27,6 @@ import argparse
 import getpass
 import logging
 import sys
-import warnings
 
 import six
 
