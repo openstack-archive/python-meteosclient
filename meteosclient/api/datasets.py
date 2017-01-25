@@ -14,8 +14,8 @@
 # limitations under the License.
 
 import base64
-from six.moves.urllib import parse
 from meteosclient.api import base
+from six.moves.urllib import parse
 
 
 class Dataset(base.Resource):
