@@ -28,7 +28,8 @@ class DatasetManager(base.ResourceManager):
 
     def create(self, method=None, source_dataset_url=None, display_name=None,
                display_description=None, experiment_id=None, params=None,
-               swift_tenant=None, swift_username=None, swift_password=None):
+               swift_tenant=None, swift_username=None, swift_password=None,
+               percent_train=None, percent_test=None):
         """Create a Dataset."""
 
         data = {
@@ -38,6 +39,8 @@ class DatasetManager(base.ResourceManager):
             'display_description': display_description,
             'experiment_id': experiment_id,
             'params': base64.b64encode(str(params)),
+            'percent_train': percent_train,
+            'percent_test': percent_test,
             'swift_tenant': swift_tenant,
             'swift_username': swift_username,
             'swift_password': swift_password,
