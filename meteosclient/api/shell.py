@@ -220,6 +220,8 @@ def do_dataset_delete(cs, args):
 #
 # model-create [--json <file>]
 #
+# model-recreate [--json <file>]
+#
 # model-delete <model_id>
 #
 # model-load <model_id>
@@ -259,6 +261,21 @@ def do_model_create(cs, args):
 
     _filter_call_args(model, cs.models.create)
     _show_dict(cs.models.create(**model))
+
+
+@utils.arg('id',
+           metavar='<model_id>',
+           help='ID of the model to recreate.')
+@utils.arg('--json',
+           default=sys.stdin,
+           type=argparse.FileType('r'),
+           help='JSON representation of model.')
+def do_model_recreate(cs, args):
+    """Recreate a model."""
+    model = json.loads(args.json.read())
+
+    _filter_call_args(model, cs.models.recreate)
+    cs.models.recreate(args.id, **model)
 
 
 @utils.arg('id',

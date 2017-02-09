@@ -1,0 +1,7 @@
+{
+    "source_dataset_url": "<YOUR_SOURCE_DATASET_URL>",
+    "dataset_format": "<YOUR_DATASET_FORMAT>",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}
