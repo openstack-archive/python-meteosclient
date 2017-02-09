@@ -1,0 +1,12 @@
+{
+    "display_name": "sample-data",
+    "display_description": "This is a sample dataset",
+    "method": "split",
+    "source_dataset_url": "<YOUR_SOURCE_DATASET_URL>",
+    "experiment_id": "<YOUR_EXPERIMENT_ID>",
+    "percent_train": "0.9",
+    "percent_test": "0.1",
+    "swift_tenant": "demo",
+    "swift_username": "demo",
+    "swift_password": "nova"
+}
