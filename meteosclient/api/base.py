@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import base64
 import copy
 import json
 import logging
@@ -172,7 +173,8 @@ class ResourceManager(object):
         resp = self.api.get(url)
         if resp.status_code == 200:
             result = get_json(resp)
-            data = result[response_key]
+            base64_params = ['args', 'params']
+            data = decode_base64(result[response_key], base64_params)
             meta = result.get('markers')
 
             next, prev = None, None
@@ -232,6 +234,16 @@ def get_json(response):
         return response.json()
     else:
         return json.loads(response.content)
+
+
+def decode_base64(data, base64_params):
+
+    for item in data:
+        for key, value in item.items():
+            if key in base64_params:
+                item[key] = base64.b64decode(value)
+
+    return data
 
 
 class APIException(Exception):

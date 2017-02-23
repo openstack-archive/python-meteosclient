@@ -18,7 +18,6 @@
 
 from __future__ import print_function
 
-import base64
 import getpass
 import inspect
 import os
@@ -139,13 +138,12 @@ def isunauthenticated(func):
     return getattr(func, 'unauthenticated', False)
 
 
-def print_list(objs, fields, base64_params=[], formatters=None, sortby_index=0,
+def print_list(objs, fields, formatters=None, sortby_index=0,
                mixed_case_fields=None, field_labels=None):
     """Print a list of objects as a table, one row per object.
 
     :param objs: iterable of :class:`Resource`
     :param fields: attributes that correspond to columns, in order
-    :param base64_params: indicate a column which encoded by base64
     :param formatters: `dict` of callables for field formatting
     :param sortby_index: index of the field for sorting table rows
     :param mixed_case_fields: fields corresponding to object attributes that
@@ -178,9 +176,6 @@ def print_list(objs, fields, base64_params=[], formatters=None, sortby_index=0,
                     field_name = field.replace(' ', '_')
                 else:
                     field_name = field.lower().replace(' ', '_')
-                if field in base64_params:
-                    data = base64.b64decode(getattr(o, field_name, ''))
-                else:
                     data = getattr(o, field_name, '')
                 row.append(data)
         pt.add_row(row)

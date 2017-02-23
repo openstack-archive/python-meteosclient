@@ -378,8 +378,7 @@ def do_learning_list(cs, args):
                'status',
                'args',
                'stdout')
-    base64_params = ['args']
-    utils.print_list(learnings, columns, base64_params=base64_params)
+    utils.print_list(learnings, columns)
 
 
 @utils.arg('id',
