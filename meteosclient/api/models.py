@@ -85,12 +85,18 @@ class ModelManager(base.ResourceManager):
 
         self._post(url, body)
 
-    def recreate(self, model_id, source_dataset_url=None, dataset_format=None,
-                 swift_tenant=None, swift_username=None, swift_password=None):
+    def recreate(self, model_id, display_name=None, display_description=None,
+                 source_dataset_url=None, model_type=None, model_params=None,
+                 dataset_format=None, swift_tenant=None, swift_username=None,
+                 swift_password=None):
         """Recreate a Model."""
 
         data = {
+            'display_name': display_name,
+            'display_description': display_description,
             'source_dataset_url': source_dataset_url,
+            'model_type': model_type,
+            'model_params': base64.b64encode(model_params),
             'dataset_format': dataset_format,
             'swift_tenant': swift_tenant,
             'swift_username': swift_username,
@@ -100,4 +106,4 @@ class ModelManager(base.ResourceManager):
         url = '/models/%s/action' % model_id
         body = {'os-recreate': data}
 
-        return self._post(url, body)
+        return self._post(url, body, 'model')
