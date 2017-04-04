@@ -177,7 +177,7 @@ def print_list(objs, fields, formatters=None, sortby_index=0,
                 else:
                     field_name = field.lower().replace(' ', '_')
                     data = getattr(o, field_name, '')
-                row.append(data)
+                    row.append(data)
         pt.add_row(row)
 
     if six.PY3:
