@@ -22,7 +22,7 @@ in the `developer guide
 * `Specs`_
 * `How to Contribute`_
 
-.. _PyPi: https://pypi.python.org/pypi/python-meteosclient
+.. _PyPi: https://pypi.org/project/python-meteosclient
 .. _Online Documentation: http://docs.openstack.org/developer/python-meteosclient
 .. _Launchpad project: https://launchpad.net/python-meteosclient
 .. _Blueprints: https://blueprints.launchpad.net/python-meteosclient
