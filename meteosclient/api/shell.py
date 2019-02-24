@@ -15,8 +15,9 @@
 
 import argparse
 import inspect
-import json
 import sys
+
+from oslo_serialization import jsonutils
 
 from meteosclient.openstack.common import cliutils as utils
 
@@ -94,7 +95,7 @@ def do_template_show(cs, args):
            help='JSON representation of template.')
 def do_template_create(cs, args):
     """Create a template."""
-    template = json.loads(args.json.read())
+    template = jsonutils.loads(args.json.read())
 
     _filter_call_args(template, cs.templates.create)
     _show_dict(cs.templates.create(**template))
@@ -146,7 +147,7 @@ def do_experiment_show(cs, args):
            help='JSON representation of experiment.')
 def do_experiment_create(cs, args):
     """Create a experiment."""
-    experiment = json.loads(args.json.read())
+    experiment = jsonutils.loads(args.json.read())
 
     _filter_call_args(experiment, cs.experiments.create)
     _show_dict(cs.experiments.create(**experiment))
@@ -198,7 +199,7 @@ def do_dataset_show(cs, args):
            help='JSON representation of dataset.')
 def do_dataset_create(cs, args):
     """Create a dataset."""
-    dataset = json.loads(args.json.read())
+    dataset = jsonutils.loads(args.json.read())
 
     _filter_call_args(dataset, cs.datasets.create)
     _show_dict(cs.datasets.create(**dataset))
@@ -257,7 +258,7 @@ def do_model_show(cs, args):
            help='JSON representation of model.')
 def do_model_create(cs, args):
     """Create a model."""
-    model = json.loads(args.json.read())
+    model = jsonutils.loads(args.json.read())
 
     _filter_call_args(model, cs.models.create)
     _show_dict(cs.models.create(**model))
@@ -272,7 +273,7 @@ def do_model_create(cs, args):
            help='JSON representation of model.')
 def do_model_recreate(cs, args):
     """Recreate a model."""
-    model = json.loads(args.json.read())
+    model = jsonutils.loads(args.json.read())
 
     _filter_call_args(model, cs.models.recreate)
     cs.models.recreate(args.id, **model)
@@ -343,7 +344,7 @@ def do_model_evaluation_show(cs, args):
            help='JSON representation of model_evaluation.')
 def do_model_evaluation_create(cs, args):
     """Create a model_evaluation."""
-    model_evaluation = json.loads(args.json.read())
+    model_evaluation = jsonutils.loads(args.json.read())
 
     _filter_call_args(model_evaluation, cs.model_evaluations.create)
     _show_dict(cs.model_evaluations.create(**model_evaluation))
@@ -396,7 +397,7 @@ def do_learning_show(cs, args):
            help='JSON representation of learning.')
 def do_learning_create(cs, args):
     """Create a learning."""
-    learning = json.loads(args.json.read())
+    learning = jsonutils.loads(args.json.read())
 
     _filter_call_args(learning, cs.learnings.create)
     _show_dict(cs.learnings.create(**learning))

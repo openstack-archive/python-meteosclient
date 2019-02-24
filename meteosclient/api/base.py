@@ -15,8 +15,9 @@
 
 import base64
 import copy
-import json
 import logging
+
+from oslo_serialization import jsonutils
 
 import six
 from six.moves.urllib import parse
@@ -233,7 +234,7 @@ def get_json(response):
     if callable(json_field_or_function):
         return response.json()
     else:
-        return json.loads(response.content)
+        return jsonutils.loads(response.content)
 
 
 def decode_base64(data, base64_params):
