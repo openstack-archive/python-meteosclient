@@ -1,7 +1,0 @@
-{
-    "display_name": "example-learning-job",
-    "display_description": "This is a sample job",
-    "model_id": "<YOUR_MODEL_ID>",
-    "method": "predict",
-    "args": "<INPUT_DATA>"
-}

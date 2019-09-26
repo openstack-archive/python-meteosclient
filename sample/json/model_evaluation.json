@@ -1,8 +1,0 @@
-{
-    "display_name": "sample-evaluation",
-    "source_dataset_url": "<YOUR_SOURCE_DATASET_URL>",
-    "model_id": "<YOUR_MODEL_ID>",
-    "swift_tenant": "demo",
-    "swift_username": "demo",
-    "swift_password": "nova"
-}
